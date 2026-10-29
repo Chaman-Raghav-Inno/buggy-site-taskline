@@ -1,0 +1,22 @@
+<form id="login-form" class="card auth-card" novalidate>
+  <h1>Log in to your workspace</h1>
+  <div class="field">
+    <label for="l-email">Work email</label>
+    <input id="l-email" type="email" autocomplete="username">
+  </div>
+  <div class="field">
+    <label for="l-password">Password</label>
+    <input id="l-password" type="password" autocomplete="current-password">
+  </div>
+  <button type="submit" class="btn btn-block">Log in</button>
+  <p id="login-msg" class="msg error" role="alert"></p>
+  <p><a href="/forgot">Forgot your password?</a></p>
+  <div class="demo-accounts">
+    <p><strong>Demo accounts</strong> (password <code>Taskline@2026</code>)</p>
+    <ul>
+      <li><code>alex@taskline.test</code>: Admin</li>
+      <li><code>sam@taskline.test</code>: Member</li>
+      <li><code>viv@taskline.test</code>: Viewer (read only)</li>
+    </ul>
+  </div>
+</form>

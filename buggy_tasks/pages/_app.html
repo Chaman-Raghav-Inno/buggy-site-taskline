@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="{{theme}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} · Taskline</title>
+<meta name="description" content="Taskline keeps your team's tasks, time and projects in one place.">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/core.js" defer></script>
+{{scripts}}
+</head>
+<body data-page="{{page}}" data-role="{{role}}" data-date-format="{{date_format}}">
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✓</span> Taskline</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/" data-nav="dashboard">Dashboard</a>
+      <a href="/board" data-nav="board">Board</a>
+      <a href="/tasks" data-nav="tasks">Tasks</a>
+      <a href="/timesheet" data-nav="timesheet">Timesheet</a>
+      <a href="/reports" data-nav="reports">Reports</a>
+      <a href="/projects" data-nav="projects">Projects</a>
+      <a href="/team" data-nav="team">Team</a>
+    </nav>
+    <p class="demo-note">Demo workspace for QA testing. Nothing here is real.</p>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <div class="search" role="search">
+        <label class="sr-only" for="global-search">Search tasks</label>
+        <input id="global-search" type="search" placeholder="Search tasks…" autocomplete="off" role="combobox"
+               aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+        <ul id="search-results" class="search-results" role="listbox" aria-label="Matching tasks" hidden></ul>
+      </div>
+      <a class="bell" href="/notifications" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 0 0-5.5-6.84V3a1.5 1.5 0 0 0-3 0v1.16A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2Z"/></svg>
+        <span id="unread-count" class="badge">{{unread}}</span>
+      </a>
+      <details class="user-menu">
+        <summary><span class="avatar" style="background: {{user_color}}">{{initials}}</span><span class="user-name">{{user_name}}</span></summary>
+        <div class="menu">
+          <a href="/settings">Settings</a>
+          <a href="/notifications">Notifications</a>
+          <button type="button" id="logout">Log out</button>
+        </div>
+      </details>
+    </header>
+    <main id="main">
+{{content}}
+    </main>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

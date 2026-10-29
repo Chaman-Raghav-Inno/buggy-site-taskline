@@ -1,0 +1,26 @@
+<div class="page-head">
+  <h1>Reports</h1>
+  <div class="actions">
+    <label for="range">Range</label>
+    <select id="range">
+      <option value="7">Last 7 days</option>
+      <option value="30" selected>Last 30 days</option>
+      <option value="90">Last 90 days</option>
+    </select>
+  </div>
+</div>
+<section class="tiles" aria-label="Totals for the range">
+  <div class="tile"><p class="tile-label">Tasks completed</p><p class="tile-value" id="r-completed">–</p></div>
+  <div class="tile"><p class="tile-label">Tasks created</p><p class="tile-value" id="r-created">–</p></div>
+  <div class="tile"><p class="tile-label">Average days to complete</p><p class="tile-value" id="r-avg">–</p></div>
+</section>
+<div class="grid-2">
+  <section class="card">
+    <h2>Completed per week</h2>
+    <div id="chart" class="chart" role="img" aria-label="Tasks completed in each of the last 8 weeks"></div>
+  </section>
+  <section class="card">
+    <h2>Open tasks by person</h2>
+    <ul id="workload" class="list bars"></ul>
+  </section>
+</div>

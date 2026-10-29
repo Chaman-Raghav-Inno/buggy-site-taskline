@@ -1,0 +1,59 @@
+<div class="page-head"><h1>Settings</h1></div>
+<div class="grid-2">
+  <form id="profile-form" class="card form" novalidate>
+    <h2>Profile</h2>
+    <div class="field">
+      <label for="s-name">Full name</label>
+      <input id="s-name" maxlength="60" autocomplete="name">
+    </div>
+    <div class="field">
+      <label for="s-email">Email</label>
+      <input id="s-email" type="email" readonly>
+    </div>
+    <button type="submit" class="btn">Save profile</button>
+    <p id="profile-msg" class="msg" role="status"></p>
+  </form>
+  <form id="prefs-form" class="card form" novalidate>
+    <h2>Preferences</h2>
+    <div class="field">
+      <label for="s-date">Date format</label>
+      <select id="s-date">
+        <option value="DMY">31/12/2026 (day/month/year)</option>
+        <option value="MDY">12/31/2026 (month/day/year)</option>
+        <option value="ISO">2026-12-31 (year-month-day)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="s-theme">Theme</label>
+      <select id="s-theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    <fieldset>
+      <legend>Email me when</legend>
+      <label class="check"><input type="checkbox" id="s-notify-assign"> A task is assigned to me</label>
+      <label class="check"><input type="checkbox" id="s-notify-comment"> Someone comments on my task</label>
+    </fieldset>
+    <button type="submit" class="btn">Save preferences</button>
+    <p id="prefs-msg" class="msg" role="status"></p>
+  </form>
+</div>
+<form id="password-form" class="card form narrow-form" novalidate>
+  <h2>Change password</h2>
+  <div class="field">
+    <label for="pw-current">Current password</label>
+    <input id="pw-current" type="password" autocomplete="current-password">
+  </div>
+  <div class="field">
+    <label for="pw-new">New password</label>
+    <input id="pw-new" type="password" autocomplete="new-password" aria-describedby="pw-hint">
+    <p id="pw-hint" class="hint">At least 8 characters, including a number.</p>
+  </div>
+  <div class="field">
+    <label for="pw-confirm">Confirm new password</label>
+    <input id="pw-confirm" type="password" autocomplete="new-password">
+  </div>
+  <button type="submit" class="btn">Change password</button>
+  <p id="password-msg" class="msg" role="status"></p>
+</form>

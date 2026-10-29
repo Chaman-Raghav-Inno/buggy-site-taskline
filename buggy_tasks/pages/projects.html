@@ -1,0 +1,30 @@
+<div class="page-head">
+  <h1>Projects</h1>
+  <div class="actions">
+    <button id="new-project" class="btn" type="button" data-needs="edit">New project</button>
+  </div>
+</div>
+<div id="projects" class="project-grid"></div>
+<dialog id="project-dialog" aria-labelledby="project-dialog-title">
+  <form id="project-form" class="form" novalidate>
+    <h2 id="project-dialog-title">New project</h2>
+    <div class="field">
+      <label for="p-name">Name</label>
+      <input id="p-name" maxlength="60">
+    </div>
+    <div class="field">
+      <label for="p-key">Key</label>
+      <input id="p-key" maxlength="5" aria-describedby="p-key-hint">
+      <p id="p-key-hint" class="hint">2 to 5 letters, used in task numbers (WEB-12). Must be unique.</p>
+    </div>
+    <div class="field">
+      <label for="p-color">Colour</label>
+      <input id="p-color" type="color" value="#4b5f9e">
+    </div>
+    <p id="project-msg" class="msg error" role="alert"></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost" id="project-cancel">Cancel</button>
+      <button type="submit" class="btn" id="project-create">Create project</button>
+    </div>
+  </form>
+</dialog>
