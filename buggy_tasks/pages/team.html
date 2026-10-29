@@ -1,0 +1,43 @@
+<div class="page-head">
+  <h1>Team</h1>
+  <p id="seats" class="pill"></p>
+</div>
+<section class="card">
+  <h2>Members</h2>
+  <div class="table-wrap">
+    <table class="table" aria-label="Members">
+      <thead><tr><th>Name</th><th>Email</th><th>Role</th><th><span class="sr-only">Actions</span></th></tr></thead>
+      <tbody id="members"></tbody>
+    </table>
+  </div>
+  <p id="team-msg" class="msg" role="status"></p>
+</section>
+<section class="card" id="invite-card">
+  <h2>Invite people</h2>
+  <form id="invite-form" class="inline-form" novalidate data-needs="admin">
+    <div class="field">
+      <label for="i-email">Email</label>
+      <input id="i-email" type="email" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="i-role">Role</label>
+      <select id="i-role">
+        <option value="member">Member</option>
+        <option value="viewer">Viewer</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit" class="btn">Send invite</button>
+  </form>
+  <p id="invite-msg" class="msg" role="status"></p>
+  <h3>Pending invites</h3>
+  <ul id="invites" class="list"></ul>
+</section>
+<dialog id="remove-dialog" aria-labelledby="remove-title">
+  <h2 id="remove-title">Remove member?</h2>
+  <p id="remove-text"></p>
+  <div class="dialog-actions">
+    <button type="button" class="btn btn-ghost" data-value="cancel">Cancel</button>
+    <button type="button" class="btn btn-danger" data-value="remove">Remove</button>
+  </div>
+</dialog>

@@ -1,0 +1,84 @@
+<div class="page-head">
+  <h1>Tasks</h1>
+  <div class="actions">
+    <button id="copy-link" class="btn btn-ghost" type="button">Copy link</button>
+    <button id="export" class="btn btn-ghost" type="button">Export CSV</button>
+    <button id="new-task" class="btn" type="button" data-needs="edit">New task</button>
+  </div>
+</div>
+<form id="filters" class="filters card" novalidate>
+  <div class="field">
+    <label for="f-q">Search</label>
+    <input id="f-q" type="search" placeholder="Search by title or key" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="f-project">Project</label>
+    <select id="f-project"><option value="">All projects</option></select>
+  </div>
+  <div class="field">
+    <label for="f-assignee">Assignee</label>
+    <select id="f-assignee"><option value="">Anyone</option><option value="none">Unassigned</option></select>
+  </div>
+  <div class="field">
+    <label for="f-status">Status</label>
+    <select id="f-status">
+      <option value="">Any status</option>
+      <option value="todo">To do</option>
+      <option value="doing">In progress</option>
+      <option value="review">In review</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="f-priority">Priority</label>
+    <select id="f-priority">
+      <option value="">Any priority</option>
+      <option value="urgent">Urgent</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="f-due">Due</label>
+    <select id="f-due">
+      <option value="">Any time</option>
+      <option value="overdue">Overdue</option>
+      <option value="today">Due today</option>
+      <option value="week">Due this week</option>
+      <option value="none">No due date</option>
+    </select>
+  </div>
+  <div class="field field-end">
+    <button id="f-clear" type="button" class="btn btn-ghost">Clear filters</button>
+  </div>
+</form>
+<div id="bulk" class="bulk card" hidden data-needs="edit">
+  <span id="bulk-count">0 selected</span>
+  <button id="bulk-done" type="button" class="btn btn-small">Mark as done</button>
+  <label for="bulk-assignee">Assign to</label>
+  <select id="bulk-assignee"><option value="">Choose…</option><option value="none">Unassigned</option></select>
+  <button id="bulk-delete" type="button" class="btn btn-small btn-danger">Delete</button>
+</div>
+<div class="table-wrap">
+  <table class="table" aria-label="Tasks">
+    <thead>
+      <tr>
+        <th class="col-check"><input type="checkbox" id="select-all" aria-label="Select all tasks on this page"></th>
+        <th><button type="button" class="sort" data-sort="key">Key</button></th>
+        <th><button type="button" class="sort" data-sort="title">Title</button></th>
+        <th><button type="button" class="sort" data-sort="status">Status</button></th>
+        <th><button type="button" class="sort" data-sort="priority">Priority</button></th>
+        <th><button type="button" class="sort" data-sort="assignee">Assignee</button></th>
+        <th><button type="button" class="sort" data-sort="due">Due</button></th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+<p id="empty" class="empty" hidden>No tasks match these filters.</p>
+<nav class="pager" aria-label="Pages">
+  <button id="prev" type="button" class="btn btn-ghost btn-small">Previous</button>
+  <span id="page-info"></span>
+  <button id="next" type="button" class="btn btn-ghost btn-small">Next</button>
+</nav>
